@@ -52,8 +52,6 @@ for account in me.get_ad_accounts(fields=['id']):
             combined_data = {**campaign_dict, **insight_dict}
             campaigns_data.append(combined_data)
             
-with open('data.json', 'w', encoding="utf-8") as file:
-    json.dump(campaigns_data, file)
+        with open(f'{campaign_dict["account_id"]}.json', 'w', encoding="utf-8") as file:
+            json.dump(campaigns_data, file)
             
-
-
